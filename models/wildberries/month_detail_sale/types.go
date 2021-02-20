@@ -6,8 +6,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/webnice/wildberries/modules/communication"
-	wildberriesTypes "github.com/webnice/wildberries/types"
+	"github.com/lanzay/wildberries/modules/communication"
+	wildberriesTypes "github.com/lanzay/wildberries/types"
 )
 
 const wildberriesNonRFC3339TimeFormat = `2006-01-02T15:04:05`

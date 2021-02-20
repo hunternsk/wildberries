@@ -1,4 +1,4 @@
-module github.com/webnice/wildberries
+module github.com/lanzay/wildberries
 
 go 1.13
 

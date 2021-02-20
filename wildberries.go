@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/webnice/wildberries/models/wildberries/incomes"
-	monthSale "github.com/webnice/wildberries/models/wildberries/month_detail_sale"
-	"github.com/webnice/wildberries/models/wildberries/orders"
-	"github.com/webnice/wildberries/models/wildberries/sales"
-	"github.com/webnice/wildberries/models/wildberries/stocks"
-	"github.com/webnice/wildberries/modules/communication"
+	"github.com/lanzay/wildberries/models/wildberries/incomes"
+	monthSale "github.com/lanzay/wildberries/models/wildberries/month_detail_sale"
+	"github.com/lanzay/wildberries/models/wildberries/orders"
+	"github.com/lanzay/wildberries/models/wildberries/sales"
+	"github.com/lanzay/wildberries/models/wildberries/stocks"
+	"github.com/lanzay/wildberries/modules/communication"
 )
 
 // New Creates an new object of package and return interface
