@@ -77,8 +77,9 @@ func (mds *impl) request(
 	fromAt ...time.Time,
 ) (statusCode int, ret []*wildberriesTypes.MonthDetailSale, err error) {
 	const (
-		urn            = `%s/reportDetailMart`
+		urn            = `%s/reportDetailByPeriod`
 		keyDate        = `dateFrom`
+		keyDateTo      = `dateTo`
 		keyApi         = `key`
 		keyLimit       = `limit`
 		keyRowID       = `rrdid`
@@ -88,18 +89,23 @@ func (mds *impl) request(
 	var (
 		req  request.Interface
 		from time.Time
+		to   time.Time
 		uri  *url.URL
 	)
 
 	// Подготовка данных
 	from = mds.getFrom(fromAt...)
+	if len(fromAt) > 1 {
+		to = mds.getFrom(fromAt[0])
+	}
 	if uri, err = url.Parse(fmt.Sprintf(urn, mds.serverURI)); err != nil {
 		err = fmt.Errorf("can't create request URI, error: %s", err)
 		return
 	}
 	uri.RawQuery = fmt.Sprintf(
 		rawQueryFmt,
-		keyDate, from.In(wildberriesTypes.WildberriesTimezoneLocal).Format(wildberriesNonRFC3339TimeFormat),
+		//keyDate, from.In(wildberriesTypes.WildberriesTimezoneLocal).Format(wildberriesNonRFC3339TimeFormat),
+		keyDate, from.In(wildberriesTypes.WildberriesTimezoneLocal).Format(`2006-01-02`),
 		keyApi, url.QueryEscape(mds.apiKey),
 	)
 	if rowID > 0 {
@@ -107,6 +113,10 @@ func (mds *impl) request(
 	}
 	if limit > 0 {
 		uri.RawQuery += fmt.Sprintf(rawQueryAddFmt, keyLimit, strconv.FormatUint(limit, 10))
+	}
+	if !to.IsZero() {
+		//uri.RawQuery += fmt.Sprintf(rawQueryAddFmt, keyDateTo, to.In(wildberriesTypes.WildberriesTimezoneLocal).Format(wildberriesNonRFC3339TimeFormat))
+		uri.RawQuery += fmt.Sprintf(rawQueryAddFmt, keyDateTo, to.In(wildberriesTypes.WildberriesTimezoneLocal).Format(`2006-01-02`))
 	}
 	// Создание запроса
 	req = mds.com.RequestJSON(mds.com.NewRequest(uri.String(), mds.com.Transport().Method().Get()))

@@ -4,7 +4,7 @@ package types
 type MonthDetailSale struct {
 	ReportID                 uint64          `json:"realizationreport_id"`        // Номер отчёта
 	SupplierContractCode     string          `json:"suppliercontract_code"`       // Договор
-	RowReportID              uint64          `json:"rrd_id"`                      // Уникальный идентификатор номера строки отчёта
+	RowReportID              uint64          `json:"rrd_id"`                      // FK // Уникальный идентификатор номера строки отчёта
 	IncomeID                 uint64          `json:"gi_id"`                       // Номер поставки
 	Name                     string          `json:"subject_name"`                // Предмет или название товара
 	WbID                     uint64          `json:"nm_id"`                       // Код валберис, он же номенклатура валберис, он же код 1С, он же артикул
@@ -38,4 +38,5 @@ type MonthDetailSale struct {
 	ProductDiscountForReport float64         `json:"product_discount_for_report"` // Согласованный продуктовый дисконт
 	SupplierPromo            float64         `json:"supplier_promo"`              // Промокод
 	SupplierSpp              float64         `json:"supplier_spp"`                // Скидка постоянного покупателя
+	Rid                      int64           `json:"rid"`                         // Rid
 }

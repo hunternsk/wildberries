@@ -23,8 +23,8 @@ type Sale struct {
 	AreaName          string          `json:"oblastOkrugName"`   // Область или округ
 	RegionName        string          `json:"regionName"`        // Регион
 	IncomeID          uint64          `json:"incomeID"`          // Уникальный идентификатор поставки
-	SaleID            string          `json:"saleID"`            // Уникальный идентификатор продажи или возврата S-продажа, R-возврат, D-доплата
-	PositionID        uint64          `json:"odid"`              // Уникальный идентификатор позиции заказа
+	SaleID            string          `json:"saleID"`            // FK // Уникальный идентификатор продажи или возврата S-продажа, R-возврат, D-доплата
+	PositionID        int64           `json:"odid"`              // Уникальный идентификатор позиции заказа
 	Spp               float64         `json:"spp"`               // Согласованная скидка постоянного покупателя (СПП)
 	Forpay            float64         `json:"forPay"`            // Сумма к перечислению поставщику
 	FinishedPrice     float64         `json:"finishedPrice"`     // Фактическая цена из заказа с учётом всех скидок включая скидки валберис
@@ -33,4 +33,6 @@ type Sale struct {
 	Name              string          `json:"subject"`           // Предмет или название товара
 	Category          string          `json:"category"`          // Категория
 	BrandName         string          `json:"brand"`             // Бренд
+	IsStorno          int             `json:"IsStorno"`          // Сторно
+	GNumber           string          `json:"gNumber"`           // gNumber
 }

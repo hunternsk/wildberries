@@ -14,4 +14,5 @@ type Income struct {
 	AcceptAt      WildberriesTime `json:"dateClose"`       // Дата и время принятия (закрытия) в валберис
 	WarehouseName string          `json:"warehouseName"`   // Название склада
 	WbID          uint64          `json:"nmId"`            // Код валберис, он же номенклатура валберис, он же код 1С
+	Status        string          `json:"status"`          // Текущий статус поставки
 }
