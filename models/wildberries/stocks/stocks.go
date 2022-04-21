@@ -8,8 +8,8 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/lanzay/wildberries/modules/communication"
-	wildberriesTypes "github.com/lanzay/wildberries/types"
+	"github.com/whimax/wildberries/modules/communication"
+	wildberriesTypes "github.com/whimax/wildberries/types"
 
 	"gopkg.in/webnice/transport.v2/request"
 )

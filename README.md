@@ -10,11 +10,11 @@ Wildberries is a library written in pure Go providing a set of functions that al
 
 To get the package, execute:
 ```bash
-go get github.com/lanzay/wildberries
+go get github.com/whimax/wildberries
 ```
 
 To import this package, add the following line to your code:
 
 ```bash
-import "github.com/webnice/wildberries"
+import "github.com/whimax/wildberries"
 ```
