@@ -96,7 +96,7 @@ func (mds *impl) request(
 	// Подготовка данных
 	from = mds.getFrom(fromAt...)
 	if len(fromAt) > 1 {
-		to = mds.getFrom(fromAt[0])
+		to = mds.getFrom(fromAt[1])
 	}
 	if uri, err = url.Parse(fmt.Sprintf(urn, mds.serverURI)); err != nil {
 		err = fmt.Errorf("can't create request URI, error: %s", err)
