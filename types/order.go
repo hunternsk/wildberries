@@ -3,7 +3,7 @@ package types
 // Order Структура данных отчёта валберис "Заказы".
 // totalPrice*(100-discountPercent)/100= pricewithdisc (как и Методах сервиса. Продажи)
 type Order struct {
-	Number          string          `json:"Number"`          // Number
+	Number          uint64          `json:"Number"`          // Number
 	Date            WildberriesTime `json:"date"`            // Дата заказа
 	LastChangeDate  WildberriesTime `json:"lastChangeDate"`  // Дата и время последнего обновления информации отчёта в сервисе
 	SupplierArticle string          `json:"supplierArticle"` // Артикул товара поставщика
