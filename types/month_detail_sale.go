@@ -44,7 +44,7 @@ type MonthDetailSale struct {
 	Ppvz_office_name            string          `json:"ppvz_office_name"`
 	Ppvz_supplier_id            uint64          `json:"ppvz_supplier_id"`
 	Declaration_number          string          `json:"declaration_number"`
-	Sticker_id                  uint64          `json:"sticker_id"`
+	Sticker_id                  string          `json:"sticker_id"`
 
 	/*
 		Supplier_spp              float64         `json:"supplier_spp"`                // Скидка постоянного покупателя
