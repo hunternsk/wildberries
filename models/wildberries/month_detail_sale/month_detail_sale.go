@@ -114,10 +114,8 @@ func (mds *impl) request(
 	if limit > 0 {
 		uri.RawQuery += fmt.Sprintf(rawQueryAddFmt, keyLimit, strconv.FormatUint(limit, 10))
 	}
-	if !to.IsZero() {
-		//uri.RawQuery += fmt.Sprintf(rawQueryAddFmt, keyDateTo, to.In(wildberriesTypes.WildberriesTimezoneLocal).Format(wildberriesNonRFC3339TimeFormat))
-		uri.RawQuery += fmt.Sprintf(rawQueryAddFmt, keyDateTo, to.In(wildberriesTypes.WildberriesTimezoneLocal).Format(`2006-01-02`))
-	}
+	//uri.RawQuery += fmt.Sprintf(rawQueryAddFmt, keyDateTo, to.In(wildberriesTypes.WildberriesTimezoneLocal).Format(wildberriesNonRFC3339TimeFormat))
+	uri.RawQuery += fmt.Sprintf(rawQueryAddFmt, keyDateTo, to.In(wildberriesTypes.WildberriesTimezoneLocal).Format(`2006-01-02`))
 	// Создание запроса
 	req = mds.com.RequestJSON(mds.com.NewRequest(uri.String(), mds.com.Transport().Method().Get()))
 	defer mds.com.Transport().RequestPut(req)
