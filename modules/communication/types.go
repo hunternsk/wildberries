@@ -42,7 +42,8 @@ const (
 	CacheControl = `no-cache`
 
 	// UserAgent Стандартный заголовок User-Agent
-	UserAgent = `WEBNICE wildberries/modules/communication/` + version
+	//UserAgent = `WEBNICE wildberries/modules/communication/` + version
+	UserAgent = `Mozilla/5.0 (Android 10; Mobile; rv:97.0) Gecko/97.0 Firefox/97.0`
 )
 
 // Interface is an interface of package
