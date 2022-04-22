@@ -37,7 +37,7 @@ type MonthDetailSale struct {
 	Ppvz_kvw_prc                float64         `json:"ppvz_kvw_prc"`
 	Ppvz_sales_commission       float64         `json:"ppvz_sales_commission"`
 	Ppvz_for_pay                float64         `json:"ppvz_for_pay"`
-	Ppvz_reward                 uint64          `json:"ppvz_reward"`
+	Ppvz_reward                 float64         `json:"ppvz_reward"`
 	Ppvz_vw                     float64         `json:"ppvz_vw"`
 	Ppvz_vw_nds                 float64         `json:"ppvz_vw_nds"`
 	Ppvz_office_id              uint64          `json:"ppvz_office_id"`
