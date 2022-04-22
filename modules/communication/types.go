@@ -14,12 +14,12 @@ import (
 )
 
 const (
-	defaultMaximumIdleConnections        = uint(1000)       // Максимальное общее число бездействующих keepalive соединений
-	defaultMaximumIdleConnectionsPerHost = uint(10)         // Максимальное число бездействующих keepalive соединений для каждого хоста
-	defaultDialContextTimeout            = time.Second * 3  // Таймаут установки соединения с хостом
-	defaultIdleConnectionTimeout         = time.Minute * 5  // Таймаут keepalive соединения до обрыва связи
-	defaultTotalTimeout                  = time.Second * 90 // Общий таймаут на весь процесс связи, включает соединение, отправку данных, получение ответа
-	defaultRequestPoolSize               = uint16(20)       // Размер пула воркеров готовых для выполнения запросов к хостам
+	defaultMaximumIdleConnections        = uint(1000)        // Максимальное общее число бездействующих keepalive соединений
+	defaultMaximumIdleConnectionsPerHost = uint(20)          // Максимальное число бездействующих keepalive соединений для каждого хоста
+	defaultDialContextTimeout            = time.Second * 15  // Таймаут установки соединения с хостом
+	defaultIdleConnectionTimeout         = time.Minute * 10  // Таймаут keepalive соединения до обрыва связи
+	defaultTotalTimeout                  = time.Second * 180 // Общий таймаут на весь процесс связи, включает соединение, отправку данных, получение ответа
+	defaultRequestPoolSize               = uint16(20)        // Размер пула воркеров готовых для выполнения запросов к хостам
 )
 
 const (
