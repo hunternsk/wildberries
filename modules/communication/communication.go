@@ -42,7 +42,8 @@ func newTransport() transport.Interface {
 		DialContextTimeout(defaultDialContextTimeout).                       // Таймаут установки соединения с хостом
 		IdleConnectionTimeout(defaultIdleConnectionTimeout).                 // Таймаут keepalive соединения до обрыва связи
 		TotalTimeout(defaultTotalTimeout).                                   // Общий таймаут на весь процесс связи, включает соединение, отправку данных, получение ответа
-		RequestPoolSize(defaultRequestPoolSize)                              // Размер пула воркеров готовых для выполнения запросов к хостам
+		RequestPoolSize(defaultRequestPoolSize).                             // Размер пула воркеров готовых для выполнения запросов к хостам
+		TLSSkipVerify(defaultSkipTlsVerify)
 }
 
 // Errors Ошибки известного состояни, которые могут вернуть функции пакета

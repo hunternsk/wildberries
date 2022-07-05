@@ -20,6 +20,7 @@ const (
 	defaultIdleConnectionTimeout         = time.Minute * 10  // Таймаут keepalive соединения до обрыва связи
 	defaultTotalTimeout                  = time.Second * 180 // Общий таймаут на весь процесс связи, включает соединение, отправку данных, получение ответа
 	defaultRequestPoolSize               = uint16(20)        // Размер пула воркеров готовых для выполнения запросов к хостам
+	defaultSkipTlsVerify                 = true
 )
 
 const (
