@@ -31,7 +31,7 @@ type MonthDetailSale struct {
 	Gi_box_type_name            string          `json:"gi_box_type_name"`            // Тип коробов
 	Product_discount_for_report float64         `json:"product_discount_for_report"` // Согласованный продуктовый дисконт
 	Supplier_promo              float64         `json:"supplier_promo"`              // Промокод
-	Rid                         uint64          `json:"rid"`                         // Rid
+	Rid                         int64           `json:"rid"`                         // Rid
 	Ppvz_spp_prc                float64         `json:"ppvz_spp_prc"`
 	Ppvz_kvw_prc_base           float64         `json:"ppvz_kvw_prc_base"`
 	Ppvz_kvw_prc                float64         `json:"ppvz_kvw_prc"`
