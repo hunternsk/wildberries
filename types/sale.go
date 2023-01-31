@@ -11,7 +11,6 @@ type Sale struct {
 	SupplierArticle   string          `json:"supplierArticle"` // Артикул товара поставщика
 	TechSize          string          `json:"techSize"`        // Технический размер
 	Barcode           string          `json:"barcode"`         // Штрихкод
-	Quantity          int64           `json:"quantity"`        // Количество, если меньше 0 - возврат
 	TotalPrice        float64         `json:"totalPrice"`      // Цена товара из УПД
 	DiscountPercent   float64         `json:"discountPercent"` // Согласованная итоговая скидка в процентах
 	IsSupply          bool            `json:"isSupply"`        // Договор поставки

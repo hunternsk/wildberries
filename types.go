@@ -1,7 +1,5 @@
 package wildberries
 
-//import "gopkg.in/webnice/debug.v1"
-//import "gopkg.in/webnice/log.v2"
 import (
 	"time"
 
@@ -14,8 +12,8 @@ import (
 )
 
 const (
-	serviceURL   = `https://suppliers-stats.wildberries.ru` // URL сервиса wildberries
-	serviceURNv1 = `%s/api/v1/supplier`                     // URN адрес ресурса - версия ресурса
+	serviceURL   = `https://statistics-api.wildberries.ru` // URL сервиса wildberries
+	serviceURNv1 = `%s/api/v1/supplier`                    // URN адрес ресурса - версия ресурса
 )
 
 // Interface is an interface of package
