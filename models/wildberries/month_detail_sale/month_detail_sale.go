@@ -81,7 +81,7 @@ func (mds *impl) request(
 		keyApi         = `key`
 		keyLimit       = `limit`
 		keyRowID       = `rrdid`
-		rawQueryFmt    = `%s=%s&%s=%s`
+		rawQueryFmt    = `%s=%s`
 		rawQueryAddFmt = `&%s=%s`
 	)
 	var (
@@ -102,9 +102,7 @@ func (mds *impl) request(
 	}
 	uri.RawQuery = fmt.Sprintf(
 		rawQueryFmt,
-		//keyDate, from.In(wildberriesTypes.WildberriesTimezoneLocal).Format(wildberriesNonRFC3339TimeFormat),
 		keyDate, from.In(wildberriesTypes.WildberriesTimezoneLocal).Format(`2006-01-02`),
-		keyApi, url.QueryEscape(mds.apiKey),
 	)
 	if rowID > 0 {
 		uri.RawQuery += fmt.Sprintf(rawQueryAddFmt, keyRowID, strconv.FormatUint(rowID, 10))
@@ -115,7 +113,7 @@ func (mds *impl) request(
 	//uri.RawQuery += fmt.Sprintf(rawQueryAddFmt, keyDateTo, to.In(wildberriesTypes.WildberriesTimezoneLocal).Format(wildberriesNonRFC3339TimeFormat))
 	uri.RawQuery += fmt.Sprintf(rawQueryAddFmt, keyDateTo, to.In(wildberriesTypes.WildberriesTimezoneLocal).Format(`2006-01-02`))
 	// Создание запроса
-	req = mds.com.RequestJSON(mds.com.NewRequest(uri.String(), mds.com.Transport().Method().Get()))
+	req = mds.com.RequestJSON(mds.com.NewRequest(uri.String(), mds.com.Transport().Method().Get(), mds.apiKey))
 	defer mds.com.Transport().RequestPut(req)
 	// Выполнение запроса
 	if statusCode, err = mds.com.RequestResponseJSON(mds.ctx, req, &ret); err != nil {

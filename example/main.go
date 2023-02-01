@@ -9,32 +9,41 @@ import (
 
 func main() {
 	var wbClient wildberries.Interface
-	wbClient = wildberries.New("api")
+	wbClient = wildberries.New("")
 	lastMonth := GetLastMonthDate()
 	// выполним запрос на получение всех заказов за последний месяц
+
 	orders, err := wbClient.Orders().UntilDone(1*time.Second, 3).Report(false, lastMonth)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(orders)
-
-	sales, err := wbClient.Sales().UntilDone(1*time.Second, 3).Report(false, lastMonth)
-	if err != nil {
-		log.Fatal(err)
+	for _, v := range orders {
+		fmt.Println(v)
 	}
-	fmt.Println(sales)
-
-	incomes, err := wbClient.Incomes().UntilDone(1*time.Second, 3).Report(lastMonth)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(incomes)
 
 	stocks, err := wbClient.Stocks().UntilDone(1*time.Second, 3).Report(lastMonth)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(stocks)
+	for _, v := range stocks {
+		fmt.Println(v)
+	}
+
+	sales, err := wbClient.Sales().UntilDone(1*time.Second, 3).Report(false, lastMonth)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for _, v := range sales {
+		fmt.Println(v)
+	}
+
+	incomes, err := wbClient.Incomes().UntilDone(1*time.Second, 3).Report(lastMonth)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for _, v := range incomes {
+		fmt.Println(v)
+	}
 }
 
 func GetLastMonthDate() time.Time {

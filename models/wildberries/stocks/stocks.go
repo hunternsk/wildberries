@@ -93,7 +93,7 @@ func (stk *impl) request(fromAt ...time.Time) (statusCode int, ret []*wildberrie
 		keyApi, url.QueryEscape(stk.apiKey),
 	)
 	// Создание запроса
-	req = stk.com.RequestJSON(stk.com.NewRequest(uri.String(), stk.com.Transport().Method().Get()))
+	req = stk.com.RequestJSON(stk.com.NewRequest(uri.String(), stk.com.Transport().Method().Get(), stk.apiKey))
 	defer stk.com.Transport().RequestPut(req)
 	// Выполнение запроса
 	if statusCode, err = stk.com.RequestResponseJSON(stk.ctx, req, &ret); err != nil {

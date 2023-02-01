@@ -51,7 +51,7 @@ type Interface interface {
 	Transport() transport.Interface
 
 	// NewRequest Базовый метод создания объекта запроса
-	NewRequest(uri string, mtd methods.Value) (ret request.Interface)
+	NewRequest(uri string, mtd methods.Value, apiKey string) (ret request.Interface)
 
 	// RequestJSON Подготовка запроса для получения JSON ответа
 	RequestJSON(req request.Interface) (ret request.Interface)

@@ -72,9 +72,8 @@ func (ods *impl) request(onThisDay bool, fromAt ...time.Time) (statusCode int, r
 	const (
 		urn          = `%s/orders`
 		keyDate      = `dateFrom`
-		keyApi       = `key`
 		keyOnThisDay = `flag`
-		rawQueryFmt  = `%s=%s&%s=%s&%s=%s`
+		rawQueryFmt  = `%s=%s&%s=%s`
 	)
 	var (
 		req     request.Interface
@@ -95,11 +94,10 @@ func (ods *impl) request(onThisDay bool, fromAt ...time.Time) (statusCode int, r
 	uri.RawQuery = fmt.Sprintf(
 		rawQueryFmt,
 		keyDate, from.In(wildberriesTypes.WildberriesTimezoneLocal).Format(wildberriesNonRFC3339TimeFormat),
-		keyApi, url.QueryEscape(ods.apiKey),
 		keyOnThisDay, flagKey,
 	)
 	// Создание запроса
-	req = ods.com.RequestJSON(ods.com.NewRequest(uri.String(), ods.com.Transport().Method().Get()))
+	req = ods.com.RequestJSON(ods.com.NewRequest(uri.String(), ods.com.Transport().Method().Get(), ods.apiKey))
 	defer ods.com.Transport().RequestPut(req)
 	// Выполнение запроса
 	if statusCode, err = ods.com.RequestResponseJSON(ods.ctx, req, &ret); err != nil {

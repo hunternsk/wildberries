@@ -99,7 +99,7 @@ func (sle *impl) request(onThisDay bool, fromAt ...time.Time) (statusCode int, r
 		keyOnThisDay, flagKey,
 	)
 	// Создание запроса
-	req = sle.com.RequestJSON(sle.com.NewRequest(uri.String(), sle.com.Transport().Method().Get()))
+	req = sle.com.RequestJSON(sle.com.NewRequest(uri.String(), sle.com.Transport().Method().Get(), sle.apiKey))
 	defer sle.com.Transport().RequestPut(req)
 	// Выполнение запроса
 	if statusCode, err = sle.com.RequestResponseJSON(sle.ctx, req, &ret); err != nil {

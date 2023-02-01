@@ -75,7 +75,7 @@ func (inc *impl) request(fromAt ...time.Time) (statusCode int, ret []*wildberrie
 		urn         = `%s/incomes`
 		keyDate     = `dateFrom`
 		keyApi      = `key`
-		rawQueryFmt = `%s=%s&%s=%s`
+		rawQueryFmt = `%s=%s`
 	)
 	var (
 		req  request.Interface
@@ -92,10 +92,9 @@ func (inc *impl) request(fromAt ...time.Time) (statusCode int, ret []*wildberrie
 	uri.RawQuery = fmt.Sprintf(
 		rawQueryFmt,
 		keyDate, from.In(wildberriesTypes.WildberriesTimezoneLocal).Format(wildberriesNonRFC3339TimeFormat),
-		keyApi, url.QueryEscape(inc.apiKey),
 	)
 	// Создание запроса
-	req = inc.com.RequestJSON(inc.com.NewRequest(uri.String(), inc.com.Transport().Method().Get()))
+	req = inc.com.RequestJSON(inc.com.NewRequest(uri.String(), inc.com.Transport().Method().Get(), inc.apiKey))
 	defer inc.com.Transport().RequestPut(req)
 	// Выполнение запроса
 	if statusCode, err = inc.com.RequestResponseJSON(inc.ctx, req, &ret); err != nil {

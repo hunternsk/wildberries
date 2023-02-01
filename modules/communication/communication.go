@@ -51,12 +51,13 @@ func (com *impl) Errors() *Error { return Errors() }
 func (com *impl) Transport() transport.Interface { return com.singleton }
 
 // NewRequest Базовый метод создания объекта запроса
-func (com *impl) NewRequest(uri string, mtd methods.Value) (ret request.Interface) {
+func (com *impl) NewRequest(uri string, mtd methods.Value, apiKey string) (ret request.Interface) {
 	ret = com.Transport().RequestGet().
 		AcceptLanguage(AcceptLanguage).
 		UserAgent(UserAgent).
 		Method(mtd).
-		URL(uri)
+		URL(uri).
+		CustomHeader("Authorization", apiKey)
 
 	return
 }
@@ -68,7 +69,6 @@ func (com *impl) RequestJSON(req request.Interface) (ret request.Interface) {
 		AcceptEncoding(AcceptEncoding)
 	ret.Header().Add(header.CacheControl, CacheControl)
 	req.Header().Add(header.ContentType, mime.ApplicationJSONCharsetUTF8)
-
 	return
 }
 
