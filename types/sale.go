@@ -5,17 +5,16 @@ package types
 // Формула вычисления pricewithdisc:
 // Pricewithdisc = totalprice*((100 – discountPercent)/100 ) *((100 – promoCodeDiscount)/100 ) *((100 – spp)/100 )
 type Sale struct {
-	Number            string          `json:"number"`          // Номер документа
-	Date              WildberriesTime `json:"date"`            // Дата продажи
-	LastChangeDate    WildberriesTime `json:"lastChangeDate"`  // Дата и время последнего обновления информации отчёта в сервисе
-	SupplierArticle   string          `json:"supplierArticle"` // Артикул товара поставщика
-	TechSize          string          `json:"techSize"`        // Технический размер
-	Barcode           string          `json:"barcode"`         // Штрихкод
-	TotalPrice        float64         `json:"totalPrice"`      // Цена товара из УПД
-	DiscountPercent   float64         `json:"discountPercent"` // Согласованная итоговая скидка в процентах
-	IsSupply          bool            `json:"isSupply"`        // Договор поставки
-	IsRealization     bool            `json:"isRealization"`   // Договор реализации
-	OrderID           uint64          `json:"order_id"`
+	GNumber           string          `json:"gNumber"`           // gNumber
+	Date              WildberriesTime `json:"date"`              // Дата продажи
+	LastChangeDate    WildberriesTime `json:"lastChangeDate"`    // Дата и время последнего обновления информации отчёта в сервисе
+	SupplierArticle   string          `json:"supplierArticle"`   // Артикул товара поставщика
+	TechSize          string          `json:"techSize"`          // Технический размер
+	Barcode           string          `json:"barcode"`           // Штрихкод
+	TotalPrice        float64         `json:"totalPrice"`        // Цена товара из УПД
+	DiscountPercent   float64         `json:"discountPercent"`   // Согласованная итоговая скидка в процентах
+	IsSupply          bool            `json:"isSupply"`          // Договор поставки
+	IsRealization     bool            `json:"isRealization"`     // Договор реализации
 	PromoCodeDiscount float64         `json:"promoCodeDiscount"` // Согласованная скидка по промо коду
 	WarehouseName     string          `json:"warehouseName"`     // Название склада отгрузки товара
 	CountryName       string          `json:"countryName"`       // Страна
@@ -33,6 +32,6 @@ type Sale struct {
 	Category          string          `json:"category"`          // Категория
 	Brand             string          `json:"brand"`             // Бренд
 	IsStorno          int             `json:"IsStorno"`          // Сторно
-	GNumber           string          `json:"gNumber"`           // gNumber
 	Sticker           string          `json:"sticker"`           // sticker
+	Srid              string          `json:"srid"`              // sticker
 }

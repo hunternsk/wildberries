@@ -22,4 +22,5 @@ type Order struct {
 	CancelDt        WildberriesTime `json:"cancel_dt"`
 	GNumber         string          `json:"gNumber"`
 	Sticker         string          `json:"sticker"`
+	Srid            string          `json:"srid"`
 }
