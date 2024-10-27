@@ -3,12 +3,12 @@ package wildberries
 import (
 	"time"
 
-	"github.com/whimax/wildberries/models/wildberries/incomes"
-	monthSale "github.com/whimax/wildberries/models/wildberries/month_detail_sale"
-	"github.com/whimax/wildberries/models/wildberries/orders"
-	"github.com/whimax/wildberries/models/wildberries/sales"
-	"github.com/whimax/wildberries/models/wildberries/stocks"
-	"github.com/whimax/wildberries/modules/communication"
+	"github.com/hunternsk/wildberries/models/wildberries/incomes"
+	monthSale "github.com/hunternsk/wildberries/models/wildberries/month_detail_sale"
+	"github.com/hunternsk/wildberries/models/wildberries/orders"
+	"github.com/hunternsk/wildberries/models/wildberries/sales"
+	"github.com/hunternsk/wildberries/models/wildberries/stocks"
+	"github.com/hunternsk/wildberries/modules/communication"
 )
 
 const (

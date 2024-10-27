@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/whimax/wildberries/modules/communication"
-	wildberriesTypes "github.com/whimax/wildberries/types"
+	"github.com/hunternsk/wildberries/modules/communication"
+	wildberriesTypes "github.com/hunternsk/wildberries/types"
 )
 
 const wildberriesNonRFC3339TimeFormat = `2006-01-02T15:04:05`

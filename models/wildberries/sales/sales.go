@@ -6,8 +6,8 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/whimax/wildberries/modules/communication"
-	wildberriesTypes "github.com/whimax/wildberries/types"
+	"github.com/hunternsk/wildberries/modules/communication"
+	wildberriesTypes "github.com/hunternsk/wildberries/types"
 
 	"gopkg.in/webnice/transport.v2/request"
 )
@@ -115,7 +115,8 @@ func (sle *impl) request(onThisDay bool, fromAt ...time.Time) (statusCode int, r
 // If not set the fromAt parameter, then the data will be loaded for the current day
 // or starting from the date and time set by the From function.
 // PriceWithDisc calculation formula:
-//   Pricewithdisc = totalprice*((100 – discountPercent)/100 ) *((100 – promoCodeDiscount)/100 ) *((100 – spp)/100 )
+//
+//	Pricewithdisc = totalprice*((100 – discountPercent)/100 ) *((100 – promoCodeDiscount)/100 ) *((100 – spp)/100 )
 func (sle *impl) Report(onThisDay bool, fromAt ...time.Time) (ret []*wildberriesTypes.Sale, err error) {
 	var (
 		statusCode int

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/whimax/wildberries"
+	"github.com/hunternsk/wildberries"
 	"log"
 	"time"
 )

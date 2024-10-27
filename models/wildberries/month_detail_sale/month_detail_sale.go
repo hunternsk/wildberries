@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/whimax/wildberries/modules/communication"
-	wildberriesTypes "github.com/whimax/wildberries/types"
+	"github.com/hunternsk/wildberries/modules/communication"
+	wildberriesTypes "github.com/hunternsk/wildberries/types"
 
 	"gopkg.in/webnice/transport.v2/request"
 )

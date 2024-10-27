@@ -1,4 +1,4 @@
-module github.com/whimax/wildberries
+module github.com/hunternsk/wildberries
 
 go 1.13
 
